@@ -1,0 +1,27 @@
+1. permutation 库函数
+
+from itertools import permutations
+list(permutations(range(1,4), 3)
+
+这就等价于 从1到3的元素 拿出来全排列成3个的 
+输出[(1, 2, 3), (1, 3, 2), (2, 1, 3), (2, 3, 1), (3, 1, 2), (3, 2, 1)]
+并且是排序好了的形式
+
+2. map()函数的简介以及语法：
+map是python内置函数，会根据提供的函数对指定的序列做映射。
+map()函数的格式是：
+map(function,iterable,...)
+第一个参数接受一个函数名，后面的参数接受一个或多个可迭代的序列，返回的是一个集合。
+把函数依次作用在list中的每一个元素上，得到一个新的list并返回。
+注意，map不改变原list，而是返回一个新list。
+
+ >> 注意 在python 2中 map函数返回的是一个数组
+del square(x):
+    return x ** 2
+ 
+map(square,[1,2,3,4,5])
+ 
+# 结果如下:
+[1,4,9,16,25]
+
+ >> 但是在python 3 中需要手动切换 -> list(map(square,[1,2,3,4,5])) -> [1,4,9,16,25]
