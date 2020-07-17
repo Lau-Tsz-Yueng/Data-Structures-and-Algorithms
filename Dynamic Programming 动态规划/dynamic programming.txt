@@ -1,0 +1,43 @@
+动态规划类型：
+
+记住 最大子序和 还有 最大连续乘积和 多多练习！！
+
+
+坐标型动态规划 20% 重点
+序列型动态规划 20% 重点
+划分型动态规划 20% 重点
+区间型动态规划 15% 重点
+背包型动态规划 10%
+最长序列型动态规划 5%
+博弈型动态规划 5%
+综合型动态规划 5%
+
+1. 坐标型
+
+
+
+
+
+2. 序列型动态规划
+房屋染色
+https://www.lintcode.com/problem/paint-house/description
+
+class Solution:
+    """
+    @param costs: n x 3 cost matrix
+    @return: An integer, the minimum cost to paint all houses
+    """
+    def minCost(self, costs):
+        # write your code here
+        if len(costs) == 0:
+            return 0
+        f = [costs[0]] + [[0 for _ in range(len(costs[0]))] for _ in range(len(costs)-1)]
+        for j in range(1, len(costs)):
+            f[j][0] = min(f[j-1][1] + costs[j][0], f[j-1][2] + costs[j][0])
+            f[j][1] = min(f[j-1][0] + costs[j][1], f[j-1][2] + costs[j][1])
+            f[j][2] = min(f[j-1][0] + costs[j][2], f[j-1][1] + costs[j][2])
+        return min(f[-1])
+
+
+3. 
+
