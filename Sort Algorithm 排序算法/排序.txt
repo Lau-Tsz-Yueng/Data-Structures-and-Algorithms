@@ -1,0 +1,92 @@
+Sorting Algorithm:
+-----------------------------------------------
+> 选择排序 Selection Sorting
+
+打擂台 找最小值的扩展算法
+时间复杂度 O(N^2) : N + N-1 + N-2 + N-3 +...+ 1 
+不稳定的排序算法
+-----------------------------------------------
+> 插入排序 Insertion sorting
+
+-----------------------------------------------
+>  归并排序 Merge Sort
+最坏时间复杂度 O(n*log(N))
+稳定的排序算法 stable
+
+- 稳定的排序算法: 如果数组有两个相同的数 不管排序前还是排序后， 原来在前面的一定还是在前面
+
+array = [5,2,4,6,3,3,2,6]
+
+Q: 合并两个有序数列 Merge Two Sorted Arrays
+输入: A=[1,2,3,4], B=[2,4,5,6]
+输出: [1,2,2,3,4,4,5,6]	
+
+def mergeSortedArray(self, A, B):
+        # write your code here
+        ans = []
+        left, right = 0, 0
+        
+        while left < len(A) and right < len(B):
+            if A[left] < B[right]:
+                ans.append(A[left])
+                left += 1
+            else:
+                ans.append(B[right])
+                right += 1
+        
+        if left < len(A):
+            ans += A[left:]
+        
+        if right < len(B):
+            ans += B[right:]
+        
+        return ans
+
+Q: Sort Integer II
+https://www.lintcode.com/problem/sort-integers-ii/description
+
+
+
+-----------------------------------------------
+> 快速排序 Quick Sort
+均摊复杂度 O(N*log(N))
+不是稳定的排序算法
+
+快速排序思想: 
+把数组分为两边，使得：
+数组的左边小于等于数组的右边   这个过程就做Parition
+也就意味着 左边得最大数小于等于右边的最大数
+对左右两部分数组分别继续排序（递归）
+
+选择基准数Pivot：
+1.选当前数组得第一个数: pivot = array[0]
+or
+2.在当前数组中随机选一个数
+pivot = arrat[rand.nextInt(end - start + 1) + start]
+生成start ~ end之间的一个随机数
+
+Q: Partition Array
+
+
+
+
+
+-----------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
