@@ -1,0 +1,20 @@
+import functools
+class Solution:
+    def wordBreak(self, s: str, wordDict: List[str]) -> bool:
+        self.bool = False
+        wordDict = set(wordDict)
+        @functools.lru_cache(1000)
+        def backtrack(tmp):
+            if self.bool == True:
+                return
+            if tmp in wordDict:
+                self.bool = True
+                return
+            for j in range(len(tmp)):
+                if tmp[:j] in wordDict:
+                    backtrack(tmp=tmp[j:])
+        backtrack(s)
+        return self.bool
+        
+        
+        注意使用！@functools.lru_cache(None) 缓存注释器 皆可使用 不用import
